@@ -1,0 +1,6 @@
+@ServiceInjection_HostAddress = http://localhost:5147
+
+GET {{ServiceInjection_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
