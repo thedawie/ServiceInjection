@@ -11,6 +11,10 @@ public class ServiceFactory : IServiceFactory
 
     public ITestService CreateService()
     {
-        return _serviceProvider.GetService<ITestService>();
+        var testService = _serviceProvider.GetService<ITestService>();
+        if (testService == null)
+            throw new Exception(ExceptionMessage.NoServiceMessage);
+
+        return testService;
     }
 }

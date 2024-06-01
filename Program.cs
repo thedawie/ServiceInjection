@@ -18,7 +18,8 @@ ServiceLocator.SetLocatorProvider(app.Services);
 
 //factory Pattern
 var serviceFactory = app.Services.GetService<IServiceFactory>();
-MyStaticClass.Initialize(serviceFactory);
+if(serviceFactory != null)
+    MyStaticClass.Initialize(serviceFactory);
 
 //Manual Injection
 var myService = app.Services.GetService<ITestService>();

@@ -3,7 +3,7 @@ namespace ServiceInjection;
 
 public static class MyStaticClass
 {
-    private static IServiceFactory _serviceFactory;
+    private static IServiceFactory? _serviceFactory;
 
     public static void Initialize(IServiceFactory serviceFactory)
     {
@@ -17,12 +17,12 @@ public static class MyStaticClass
 
     public static void SomeFactoryMethod()
     {
-        var myService = _serviceFactory.CreateService();
-        myService.DoWork();
+        var myService = _serviceFactory?.CreateService();
+        myService?.DoWork();
     }
 
     public static void SomeManualInjectMethod(ITestService? myService)
     {
-        myService.DoWork();
+        myService?.DoWork();
     }
 }
